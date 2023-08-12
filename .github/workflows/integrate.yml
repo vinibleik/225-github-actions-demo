@@ -2,7 +2,9 @@ name: Node Continuous Integration
 
 on:
   push:
-    branches: [vini_branch]
+    branches: [ vini_branch ]
+  pull_requests:
+    branches: [ master ]
 
 jobs:
   test_pull_request:
