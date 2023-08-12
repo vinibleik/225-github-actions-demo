@@ -1,0 +1,17 @@
+name: Node Continuous Integration
+
+on:
+  push:
+    branches: [vini_branch]
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 12.x
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
